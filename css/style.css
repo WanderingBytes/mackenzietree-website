@@ -1487,15 +1487,20 @@ footer {
     display: flex;
   }
 
-  /* Hero: stack content cleanly */
+  /* Hero: push section below fixed nav, then add breathing room */
   .hero {
     align-items: flex-start;
-    padding-top: calc(var(--nav-h) + 48px);
     min-height: 100svh;
+    padding-top: 0;
+  }
+
+  .hero .container {
+    padding-top: calc(var(--nav-h) + 48px);
+    padding-bottom: 40px;
   }
 
   .hero-content {
-    padding-bottom: 24px;
+    padding-bottom: 16px;
   }
 
   .hero-scroll {
