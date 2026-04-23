@@ -20,11 +20,7 @@
     <nav class="nav scrolled" id="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo" aria-label="MacKenzie Tree Home">
-                <div class="nav-logo-icon">🌲</div>
-                <div class="nav-logo-text">
-                    <span>MacKenzie Tree</span>
-                    <span>Prospect, CT</span>
-                </div>
+                <img src="images/logo-nav.png" alt="MacKenzie Tree LLC" class="nav-logo-img" />
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -85,56 +81,89 @@
             <div class="gallery-filter reveal">
                 <button class="filter-btn active" data-filter="all" id="filter-all">All Projects</button>
                 <button class="filter-btn" data-filter="removal" id="filter-removal">Tree Removal</button>
-                <button class="filter-btn" data-filter="trimming" id="filter-trimming">Trimming</button>
+                <button class="filter-btn" data-filter="trimming" id="filter-trimming">Pruning &amp; Trimming</button>
                 <button class="filter-btn" data-filter="stump" id="filter-stump">Stump Grinding</button>
-                <button class="filter-btn" data-filter="landscape" id="filter-landscape">Landscaping</button>
+                <button class="filter-btn" data-filter="crane" id="filter-crane">Crane Services</button>
             </div>
 
             <!-- Gallery Grid -->
             <div class="gallery-grid reveal">
 
+                <!-- Removal: full crew on-site -->
                 <div class="gallery-item" data-cat="removal" id="gallery-removal-1">
-                    <img src="images/gallery-removal.png" alt="Large oak removal with ropes and rigging — Prospect CT"
+                    <img src="images/real/gallery-1-rigging.jpg" alt="MacKenzie Tree full crew on-site — box truck, chipper and crane, Prospect CT"
                         loading="lazy" />
-                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
-                    <span class="gallery-cat">Removal</span>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span class="gallery-caption">Full crew setup — chipper & crane on-site</span>
+                    </div>
+                    <span class="gallery-cat">Tree Removal</span>
                 </div>
 
-                <div class="gallery-item" data-cat="landscape" id="gallery-landscape-1">
-                    <img src="images/gallery-landscape.png"
-                        alt="Full front yard landscape design and installation — Connecticut" loading="lazy" />
-                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
-                    <span class="gallery-cat">Landscaping</span>
+                <!-- Removal: truck on cleared property -->
+                <div class="gallery-item" data-cat="removal" id="gallery-removal-2">
+                    <img src="images/real/gallery-2-bucket-truck.jpg" alt="MacKenzie Tree box truck at residential removal site — Connecticut"
+                        loading="lazy" />
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span class="gallery-caption">Residential removal — property cleared</span>
+                    </div>
+                    <span class="gallery-cat">Tree Removal</span>
                 </div>
 
-                <div class="gallery-item" data-cat="trimming" id="gallery-trimming-1">
-                    <img src="images/gallery-trimming.png"
-                        alt="Maple tree crown trimming from elevated platform — Connecticut suburb" loading="lazy" />
-                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
-                    <span class="gallery-cat">Trimming</span>
-                </div>
-
+                <!-- Stump Grinding: Rayco grinder -->
                 <div class="gallery-item" data-cat="stump" id="gallery-stump-1">
-                    <img src="images/gallery-stump.png"
-                        alt="Stump grinding with Vermeer machine — suburban Connecticut backyard" loading="lazy" />
-                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                    <img src="images/real/gallery-3-equipment.jpg" alt="MacKenzie Tree Rayco stump grinder on trailer — ready for Connecticut job"
+                        loading="lazy" />
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span class="gallery-caption">Rayco stump grinder — rolling to the job</span>
+                    </div>
                     <span class="gallery-cat">Stump Grinding</span>
                 </div>
 
-                <!-- Use the hero image as another removal shot -->
-                <div class="gallery-item" data-cat="removal" id="gallery-removal-2">
-                    <img src="images/hero.png" alt="Arborist rigging removal at height — Connecticut forest"
+                <!-- Crane: cleared luxury property -->
+                <div class="gallery-item" data-cat="crane" id="gallery-crane-1">
+                    <img src="images/real/gallery-4-climber.jpg" alt="Property cleared after crane tree removal — luxury home, Connecticut"
                         loading="lazy" />
-                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
-                    <span class="gallery-cat">Removal</span>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span class="gallery-caption">After crane removal — property fully cleared</span>
+                    </div>
+                    <span class="gallery-cat">Crane Services</span>
                 </div>
 
-                <!-- Repeat landscape for visual density -->
-                <div class="gallery-item" data-cat="landscape" id="gallery-landscape-2">
-                    <img src="images/owner.png" alt="MacKenzie Tree — Owner Christopher Jackson on site"
+                <!-- Removal: fleet on display -->
+                <div class="gallery-item" data-cat="removal" id="gallery-removal-3">
+                    <img src="images/real/gallery-5-stumps.jpg" alt="MacKenzie Tree full fleet — truck, skid steer, chipper at the yard"
                         loading="lazy" />
-                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
-                    <span class="gallery-cat">On Site</span>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span class="gallery-caption">MacKenzie Tree full fleet ready for work</span>
+                    </div>
+                    <span class="gallery-cat">Tree Removal</span>
+                </div>
+
+                <!-- Trimming: graded driveway with arborvitae -->
+                <div class="gallery-item" data-cat="trimming" id="gallery-trimming-1">
+                    <img src="images/real/gallery-6-residential.jpg" alt="Graded driveway with arborvitae hedge plantings — residential Connecticut"
+                        loading="lazy" />
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span class="gallery-caption">Arborvitae hedge line — graded &amp; planted</span>
+                    </div>
+                    <span class="gallery-cat">Pruning &amp; Trimming</span>
+                </div>
+
+                <!-- Equipment: MacKenzie on skid steer -->
+                <div class="gallery-item" data-cat="removal" id="gallery-removal-4">
+                    <img src="images/real/about-skidsteer.jpg" alt="MacKenzie Elizabeth operating the CASE skid steer during a log clearing job"
+                        loading="lazy" />
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span class="gallery-caption">CASE skid steer clearing logs post-removal</span>
+                    </div>
+                    <span class="gallery-cat">Tree Removal</span>
                 </div>
 
             </div>
@@ -183,12 +212,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="nav-logo">
-                        <div class="nav-logo-icon">🌲</div>
-                        <div class="nav-logo-text">
-                            <span>MacKenzie Tree</span>
-                            <span>Prospect, CT</span>
-                        </div>
+                    <div class="footer-logo-wrap">
+                        <img src="images/logo-nav.png" alt="MacKenzie Tree LLC" class="footer-logo-img" />
                     </div>
                     <p>Expert tree care, landscape design, and property services across Connecticut. Licensed, insured,
                         always fair.</p>

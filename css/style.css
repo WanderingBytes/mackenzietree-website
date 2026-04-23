@@ -232,6 +232,15 @@ p {
   gap: 12px;
 }
 
+/* Real logo image (transparent PNG) in nav */
+.nav-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  /* The PNG has transparent bg so it sits cleanly on the dark nav */
+}
+
 .nav-logo-icon {
   width: 42px;
   height: 42px;
@@ -871,6 +880,19 @@ footer {
   max-width: 280px;
 }
 
+/* Real logo in footer */
+.footer-logo-wrap {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.footer-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
 .footer-socials {
   display: flex;
   gap: 12px;
@@ -1129,12 +1151,15 @@ footer {
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(11, 26, 13, 0.6);
+  background: rgba(11, 26, 13, 0.72);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   opacity: 0;
   transition: var(--transition);
+  padding: 20px;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -1144,6 +1169,21 @@ footer {
 .gallery-overlay i {
   font-size: 2rem;
   color: var(--white);
+}
+
+.gallery-caption {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--cream);
+  text-align: center;
+  line-height: 1.4;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  transform: translateY(6px);
+  transition: transform var(--transition);
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
 }
 
 .gallery-cat {
