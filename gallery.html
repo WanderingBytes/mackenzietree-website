@@ -280,7 +280,13 @@
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" role="dialog" aria-label="Image lightbox">
         <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">×</button>
-        <img src="" alt="" />
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+        <div class="lightbox-img-wrap">
+            <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+            <img src="" alt="" id="lightbox-img" />
+            <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
+        </div>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
     <!-- ── CTA Banner ────────────────────────────────────── -->

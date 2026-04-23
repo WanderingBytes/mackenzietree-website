@@ -1119,47 +1119,47 @@ footer {
   color: var(--white);
 }
 
+/* ── Gallery thumbnail grid ──────────────────────────────── */
 .gallery-grid {
-  columns: 3 280px;
-  column-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
 }
 
 .gallery-item {
-  break-inside: avoid;
   position: relative;
-  margin-bottom: 16px;
-  border-radius: var(--radius);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  border-radius: 6px;
   cursor: pointer;
-  transition: var(--transition);
-}
-
-.gallery-item:hover {
-  transform: scale(1.02);
+  background: #0b1a0d;
 }
 
 .gallery-item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  transition: var(--transition);
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
 .gallery-item:hover img {
-  filter: brightness(0.7);
+  transform: scale(1.07);
+  filter: brightness(0.6);
 }
 
+/* Hover expand icon */
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(11, 26, 13, 0.72);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   opacity: 0;
-  transition: var(--transition);
-  padding: 20px;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -1167,83 +1167,143 @@ footer {
 }
 
 .gallery-overlay i {
-  font-size: 2rem;
-  color: var(--white);
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.8);
 }
 
+/* Caption on hover — small, bottom of thumb */
 .gallery-caption {
-  font-size: 0.88rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--cream);
   text-align: center;
-  line-height: 1.4;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-  transform: translateY(6px);
-  transition: transform var(--transition);
+  line-height: 1.3;
+  padding: 0 8px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+  transform: translateY(4px);
+  transition: transform 0.25s ease;
 }
 
 .gallery-item:hover .gallery-caption {
   transform: translateY(0);
 }
 
+/* Category badge — hidden on thumbs to keep them clean */
 .gallery-cat {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(11, 26, 13, 0.75);
-  backdrop-filter: blur(8px);
-  border-radius: 50px;
-  padding: 4px 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--green-light);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  display: none;
 }
 
 .gallery-item.hidden {
   display: none;
 }
 
-/* Lightbox */
+/* ── Lightbox ────────────────────────────────────────────── */
 .lightbox {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.94);
   display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 20px 60px;
+  gap: 16px;
 }
 
 .lightbox.open {
   display: flex;
 }
 
-.lightbox img {
-  max-width: 90vw;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: var(--radius);
+.lightbox-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
 }
 
+.lightbox img {
+  max-width: min(88vw, 1100px);
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+  transition: opacity 0.2s ease;
+}
+
+/* Close button */
 .lightbox-close {
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 18px;
+  right: 22px;
   font-size: 2rem;
-  color: var(--cream);
+  color: rgba(255,255,255,0.8);
   cursor: pointer;
   background: none;
   border: none;
   line-height: 1;
-  transition: var(--transition);
+  transition: color 0.2s, transform 0.2s;
+  z-index: 1;
 }
 
 .lightbox-close:hover {
   color: var(--green-light);
-  transform: scale(1.2);
+  transform: scale(1.15);
+}
+
+/* Prev / Next arrows */
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 1.6rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  backdrop-filter: blur(6px);
+}
+
+.lightbox-prev { left: 14px; }
+.lightbox-next { right: 14px; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+/* Caption bar */
+.lightbox-caption {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0 80px;
+  flex-shrink: 0;
+}
+
+/* Counter */
+.lightbox-counter {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+  letter-spacing: 0.05em;
 }
 
 /* ── Contact Page ───────────────────────────────────────── */
@@ -1616,9 +1676,9 @@ footer {
     text-align: center;
   }
 
-  /* Gallery */
+  /* Gallery responsive */
   .gallery-grid {
-    columns: 2 140px;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /* Trust bar */
@@ -1644,6 +1704,11 @@ footer {
     flex-direction: column;
     gap: 12px;
     align-items: flex-start;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
   }
 }
 
